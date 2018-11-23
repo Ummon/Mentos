@@ -13,3 +13,11 @@ module Server =
         async {
             return reverse input
         }
+
+    [<Rpc>]
+    let state () =
+        async {
+            return Types.NotStarted
+        }
+
+
