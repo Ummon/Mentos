@@ -8,7 +8,7 @@ open FSharp.Data.Runtime.StructuralInference
 module Types =
     type Classifying = None | Real | Fake
 
-    type Articles =
+    type Article =
         {
             Id : int
             UserClassifying : Classifying
@@ -22,5 +22,6 @@ module Types =
 
     type State =
         | NotStarted
-        | Finished of Articles * Result List
-        | InProgress of Articles
+        | InProgress of Article list
+        | FinishedUnvalidated of Article list
+        | FinishedValidated of Article list * Result List
