@@ -15,14 +15,15 @@ module Templating =
     type MainTemplate = Templating.Template<"Main.html">
 
     // Compute a menubar where the menu item for the given endpoint is active
-    let MenuBar (ctx: Context<EndPoint>) endpoint : Doc list =
-        let ( => ) txt act =
-             li [ if endpoint = act then yield attr.``class`` "active" ] [
-                a [ attr.href (ctx.Link act) ] [ text txt ]
-             ]
+    let MenuBar (ctx : Context<EndPoint>) endpoint : Doc list =
+        let renderButton txt act =
+            li
+                [ if endpoint = act then yield attr.``class`` "active" ] 
+                [ a [ attr.href (ctx.Link act) ] [ text txt ] ]
+
         [
-            "Home" => EndPoint.Home
-            "About" => EndPoint.About
+            renderButton "Home" EndPoint.Home
+            renderButton "About" EndPoint.About
         ]
 
     let Main ctx action (title: string) (body: Doc list) =

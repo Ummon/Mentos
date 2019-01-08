@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
     <NoWarn>FS3186</NoWarn> <!-- https://github.com/dotnet-websharper/core/issues/1031 -->
   </PropertyGroup>
 
@@ -17,7 +17,7 @@
 
   <ItemGroup>
     <PackageReference Include="FSharp.Data" Version="3.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.5" />
+    <PackageReference Include="Microsoft.AspNetCore.All" />
     <PackageReference Include="WebSharper" Version="4.5.5.319" />
     <PackageReference Include="WebSharper.FSharp" Version="4.5.5.319" />
     <PackageReference Include="WebSharper.UI" Version="4.5.6.156" />

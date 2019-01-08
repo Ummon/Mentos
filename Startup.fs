@@ -20,7 +20,8 @@ type Startup () =
         if env.IsDevelopment () then
             app.UseDeveloperExceptionPage () |> ignore
 
-        app.UseAuthentication()
+        app
+            .UseAuthentication()
             .UseStaticFiles()
             .UseWebSharper()
             .Run(
